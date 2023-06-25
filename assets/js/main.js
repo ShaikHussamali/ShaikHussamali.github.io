@@ -260,3 +260,20 @@
   new PureCounter();
 
 })()
+
+window.addEventListener('DOMContentLoaded', () => {
+  // Get the counter element
+  const counterElement = document.getElementById('counter');
+
+  // Retrieve the counter value from local storage or set it to 0
+  let counter = parseInt(localStorage.getItem('counter')) || 0;
+
+  // Increase the counter value by 1
+  counter++;
+
+  // Update the counter element's text content
+  counterElement.textContent = counter;
+
+  // Save the updated counter value to local storage
+  localStorage.setItem('counter', counter.toString());
+});
